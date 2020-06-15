@@ -2,7 +2,7 @@
 
 one:
   email: one@one.org
-  password_digest: TestOne
+  password_digest: <%= BCrypt::Password.create('gOOd_pa$$') %>
 
 two:
   email: two@two.com
