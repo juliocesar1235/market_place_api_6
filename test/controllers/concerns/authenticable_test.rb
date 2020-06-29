@@ -11,6 +11,7 @@ end
 class AuthenticableTest < ActionDispatch::IntegrationTest
 	setup do
 			@user = users(:one)
+			@user_two = users(:two)
 			@authentication = MockController.new
 	end
 
@@ -21,7 +22,6 @@ class AuthenticableTest < ActionDispatch::IntegrationTest
 	end
 
 	test 'should not get user from unmatchable Authorization token' do
-		@user_two = users(:two)
 		@authentication.request.headers['Authorization'] = JsonWebToken.encode(user_id: @user_two.id)
 		assert_not_equal @user.id, @authentication.current_user.id
 	end
