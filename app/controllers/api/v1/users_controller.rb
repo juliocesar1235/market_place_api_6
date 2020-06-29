@@ -3,7 +3,7 @@ class Api::V1::UsersController < ApplicationController
 	before_action :check_owner, only: %i[update destroy]
 
 	def show
-			render json: @user
+	  render json: @user
 	end
 	
 	def create

@@ -2,10 +2,8 @@
 
 one:
   email: one@one.org
-  id: 1
   password_digest: <%= BCrypt::Password.create('gOOd_pa$$') %>
 
 two:
   email: two@two.com
-  id: 2
   password_digest: TestTwo
